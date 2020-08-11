@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.wrap {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(-30deg, #fdaecb, #e7597f, #fe8556);
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+
+  /* flex default 不會換行，加這段改為超過寬度就換行 */
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 568px;
+  margin: 0 15px;
+  display: flex;
+  background: rgba(255, 255, 255, .7);
+  border: 1px solid #888;
+  margin-bottom: 30px;
+
+  /* x軸、y軸、模糊度、色彩 */
+  /* 設計層面：
+      會希望陰影跟背景色彩有融合在一起
+      所以會讓陰影帶一些背景色彩
+  */
+  box-shadow: 0 10px 30px rgba(200, 0, 0, .5);
+}
+
+.item .pic {
+  width: 50%;
+}
+
+.item .pic img {
+  width: 100%;
+  height: 100%;
+
+  /* IE 不支援 */
+  object-fit: cover;
+}
+
+.item .txt {
+  width: 50%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.item .txt h2 {
+  margin-bottom: .4em;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.item .txt p {
+  font-weight: 300;
+}
+
+.item .txt .btn {
+  align-self: flex-end;
+  line-height: 1.5em;
+  border: 1px solid #ccc;
+  padding: 0 1em;
+  text-decoration: none;
+  margin-top: auto;
+  color: #aaaaaa;
+
+  /* 
+    為了保險一點不會讓尺寸壞掉
+    給比較大的且固定的 px
+    可以確保都是膠囊的外型
+  */
+  border-radius: 200px;
+}
+
+.item .txt .btn:hover {
+  background: #ccc;
+  color: #ffffff;
+}
